@@ -1,13 +1,18 @@
-import cv2 as cv
+import cv2
+import os
 
-capture = cv.VideoCapture('data/videos/dog.mp4') ## videos is download from https://github.com/jasmcaus/opencv-course/tree/master/Resources/Videos
+video_path = os.path.join('data', 'videos', 'dog.mp4') ## videos is download from https://github.com/jasmcaus/opencv-course/tree/master/Resources/Videos
+capture = cv2.VideoCapture(video_path) 
 
-while True:
-    isTrue, frame = capture.read() # Read the video frame by frame
-    cv.imshow('Video', frame)
-
-    if cv.waitKey(20) & 0xFF == ord('d'): # Press 'd' to break the loop. why 20? 20ms delay between each frame
-        break
+ret = True
+while ret:
+    ret, frame = capture.read() # Read the video frame by frame
+    
+    # wait time is calculated based on the frames per second of the video
+    # if an video is 50fps, then 1000ms/50fps = 20ms, so we need to wait 20ms to get the next frame
+    if ret:
+        cv2.imshow('Video', frame)
+        cv2.waitKey(20) # wait for 20ms before the next frame is displayed
 
 capture.release() # Release the video capture object from the memory
-cv.destroyAllWindows()
+cv2.destroyAllWindows()
