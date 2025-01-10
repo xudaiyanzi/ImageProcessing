@@ -1,3 +1,5 @@
+## This script is based on https://www.youtube.com/watch?v=eDIj5LuIL4A
+
 import cv2
 import os
 
@@ -15,4 +17,4 @@ while ret:
         cv2.waitKey(20) # wait for 20ms before the next frame is displayed
 
 capture.release() # Release the video capture object from the memory
-cv2.destroyAllWindows()
+cv2.destroyAllWindows() # Close all the windows
