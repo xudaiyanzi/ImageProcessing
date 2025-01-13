@@ -17,7 +17,7 @@ cv2.circle(img, (500, 300), 50, (0, 0, 255), -1) # (500, 300) is the center, 50 
 
 ## add text
 font = cv2.FONT_HERSHEY_SIMPLEX
-cv2.putText(img, 'OpenCV', (10, 500), font, 4, (0, 0, 0), 2, cv2.LINE_AA) # 'OpenCV' is the text, (10, 500) is the bottom-left corner, font is the font style, 4 is the font scale, (0,0,0) is the color, 2 is the thickness, cv2.LINE_AA is the line type
+cv2.putText(img, 'Hello World', (10, 500), font, 4, (0, 0, 0), 2, cv2.LINE_AA) # 'Hello World' is the text, (10, 500) is the bottom-left corner, font is the font style, 4 is the font scale, (0,0,0) is the color, 2 is the thickness, cv2.LINE_AA is the line type
 
 cv2.imshow('Original Image', img)
 cv2.waitKey(0)
