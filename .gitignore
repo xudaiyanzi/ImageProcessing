@@ -1,2 +1,3 @@
-data/
+data/test_set/*
+data/output/*
 *.DS_Store
